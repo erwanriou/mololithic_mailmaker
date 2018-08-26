@@ -1,0 +1,22 @@
+{
+  "name": "mailmaker",
+  "version": "1.0.0",
+  "description": "An application to handle email campagn maker and subcription based on credit for each oauth google user.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "reactjs",
+    "express",
+    "mongoDB",
+    "oauth",
+    "email",
+    "redux"
+  ],
+  "author": "Erwan Riou",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

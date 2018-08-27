@@ -2,9 +2,13 @@
   "name": "mailmaker",
   "version": "1.0.0",
   "description": "An application to handle email campagn maker and subcription based on credit for each oauth google user.",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+    "node": "9.11.1",
+    "npm": "6.4.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
   },
   "keywords": [
     "reactjs",

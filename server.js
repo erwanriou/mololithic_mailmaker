@@ -1,11 +1,17 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+const passport = require('passport')
+
 const app = express()
 
+//Middleware
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
+app.use(passport.initialize())
 
-// code to delete soon
-app.get('/', (req, res) => {
-    res.send({ hi: 'there' })
-})
+// Passport config
+require('./config/passportGoogle')(passport)
+// require('./config/passportJwt')(passport)
 
 
 // Server Port

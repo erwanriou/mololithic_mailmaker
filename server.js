@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const cookieSession = require('cookie-session')
 const passport = require('passport')
 const path = require('path')
 
@@ -10,24 +11,31 @@ const google = require('./routes/auth/google')
 // Run Express
 const app = express()
 
-// Middleware
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
-app.use(passport.initialize())
+// Cookies config
+const keys = require('./config/keys').keys
 
 // DB config
 const db = require('./config/keys').keys
 
+// Middleware
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(cookieSession({
+  maxAge: 30 * 24 * 60 * 60 * 1000,
+  keys: [keys.cookieKey]
+}))
+
 // Passport config
 require('./services/passportGoogle')(passport)
-// require('./config/passportJwt')(passport)
+require('./services/passportJwt')(passport)
 
 // Connect to Mongodb
 mongoose
   .connect(db.url(), db.options)
   .then(() => console.log('Mongodb Connected'))
   .catch(err => console.error(err))
-
 
 // Use Routes
 app.use('/auth/google', google)

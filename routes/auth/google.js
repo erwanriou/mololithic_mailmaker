@@ -1,7 +1,10 @@
 const express = require('express')
 const passport = require('passport')
+const jwt = require('jsonwebtoken')
 
+const User = require('../../models/User')
 const keys = require('../../config/keys').keys
+
 const router = express.Router()
 
 // @route  GET auth/google
@@ -12,6 +15,8 @@ router.get('/', passport.authenticate('google', { scope: ['profile', 'email'] })
 // @route  GET auth/google
 // @desc   Login user with google Oauth
 // @access Private
-router.get('/callback', passport.authenticate('google'))
+router.get('/callback', passport.authenticate('google'), (req, res) => {
+  res.json({ success: true })
+})
 
 module.exports = router

@@ -4,6 +4,10 @@ const bodyParser = require('body-parser')
 const passport = require('passport')
 const path = require('path')
 
+//Import routes
+const google = require('./routes/auth/google')
+
+// Run Express
 const app = express()
 
 //Middleware
@@ -15,7 +19,7 @@ app.use(passport.initialize())
 const db = require('./config/keys').keys
 
 // Passport config
-// require('./config/passportGoogle')(passport)
+require('./config/passportGoogle')(passport)
 // require('./config/passportJwt')(passport)
 
 // Connect to Mongodb
@@ -23,6 +27,10 @@ mongoose
   .connect(db.url(), db.options)
   .then(() => console.log('Mongodb Connected'))
   .catch(err => console.error(err))
+
+
+//Use Routes
+app.use('/auth/google', google)
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))

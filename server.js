@@ -4,13 +4,13 @@ const bodyParser = require('body-parser')
 const passport = require('passport')
 const path = require('path')
 
-//Import routes
+// Import routes
 const google = require('./routes/auth/google')
 
 // Run Express
 const app = express()
 
-//Middleware
+// Middleware
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.use(passport.initialize())
@@ -19,7 +19,7 @@ app.use(passport.initialize())
 const db = require('./config/keys').keys
 
 // Passport config
-require('./config/passportGoogle')(passport)
+require('./services/passportGoogle')(passport)
 // require('./config/passportJwt')(passport)
 
 // Connect to Mongodb
@@ -29,9 +29,10 @@ mongoose
   .catch(err => console.error(err))
 
 
-//Use Routes
+// Use Routes
 app.use('/auth/google', google)
 
+// Production Setup
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
   app.get('*', (req, res) => {

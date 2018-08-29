@@ -6,7 +6,12 @@ const router = express.Router()
 
 // @route  GET auth/google
 // @desc   Register user with google Oauth
-// @access private
+// @access Public
 router.get('/', passport.authenticate('google', { scope: ['profile', 'email'] }))
+
+// @route  GET auth/google
+// @desc   Login user with google Oauth
+// @access Private
+router.get('/callback', passport.authenticate('google'))
 
 module.exports = router

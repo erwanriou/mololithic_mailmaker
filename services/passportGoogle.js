@@ -23,18 +23,15 @@ module.exports = passport => {
       clientSecret: keys.googleClientSecret,
       callbackURL: '/auth/google/callback',
       proxy: true
-    }, (accessToken, refreshToken, profile, done) => {
+    },
+    async (accessToken, refreshToken, profile, done) => {
       const email = profile.emails[0].value
-      User
-        .findOne({ googleId: profile.id })
-        .then( existingUser => {
-          existingUser
-            ? done(null, existingUser)
-            : new User({ googleId: profile.id, email: email })
-                .save()
-                .then( user => done(null, user))
-        })
-        .catch(err => console.log(err))
+      const existingUser = await User.findOne({ googleId: profile.id })
+      const user = await new User({ googleId: profile.id, email: email })
+        existingUser
+          ? done(null, existingUser)
+          : user.save()
+            done(null, user)
     })
   )
 }

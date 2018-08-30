@@ -23,12 +23,13 @@ module.exports = passport => {
       clientSecret: keys.googleClientSecret,
       callbackURL: '/auth/google/callback'
     }, (accessToken, refreshToken, profile, done) => {
+      const email = profile.emails[0].value
       User
         .findOne({ googleId: profile.id })
         .then( existingUser => {
           existingUser
             ? done(null, existingUser)
-            : new User({ googleId: profile.id })
+            : new User({ googleId: profile.id, email: email })
                 .save()
                 .then( user => done(null, user))
         })

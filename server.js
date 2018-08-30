@@ -7,6 +7,7 @@ const path = require('path')
 
 // Import routes
 const google = require('./routes/auth/google')
+const users = require('./routes/api/users')
 
 // Run Express
 const app = express()
@@ -18,14 +19,12 @@ const keys = require('./config/keys').keys
 const db = require('./config/keys').keys
 
 // Middleware
+app.use(cookieSession({ maxAge: 24 * 60 * 60 * 1000,  keys: [keys.cookieKey] }))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(cookieSession({
-  maxAge: 30 * 24 * 60 * 60 * 1000,
-  keys: [keys.cookieKey]
-}))
+
 
 // Passport config
 require('./services/passportGoogle')(passport)
@@ -39,6 +38,7 @@ mongoose
 
 // Use Routes
 app.use('/auth/google', google)
+app.use('/api/users', users)
 
 // Production Setup
 if (process.env.NODE_ENV === 'production') {

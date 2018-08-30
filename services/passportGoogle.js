@@ -28,10 +28,10 @@ module.exports = passport => {
       const email = profile.emails[0].value
       const existingUser = await User.findOne({ googleId: profile.id })
       const user = await new User({ googleId: profile.id, email: email })
-        existingUser
-          ? done(null, existingUser)
-          : user.save()
-            done(null, user)
+      existingUser
+        ? done(null, existingUser)
+        : user.save()
+          done(null, user)
     })
   )
 }

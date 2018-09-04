@@ -16,13 +16,15 @@ class Nav extends React.Component {
     return (
       <div className="nav">
         <div className="container">
-          <div className="title">
-            <Link to='/'>MailMaker</Link>
-          </div>
-          <div className="auth">
-            { isAuthenticated
-                ? authLinks
-                : guestLinks }
+          <div className="menu">
+            <div className="title">
+              <Link to='/'>MailMaker</Link>
+            </div>
+            <div className="auth">
+              { isAuthenticated
+                  ? authLinks
+                  : guestLinks }
+            </div>
           </div>
         </div>
       </div>

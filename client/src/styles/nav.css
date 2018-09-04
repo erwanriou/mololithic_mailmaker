@@ -1,0 +1,25 @@
+.nav {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  background-color: #343a40;
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+  height: 3rem;
+}
+.nav .menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
+  margin: 0 auto;
+}
+.nav a {
+  font-size: 1rem;
+  color: white;
+}
+.nav .auth, .nav .title {
+  display: flex;
+  align-items: center;
+}

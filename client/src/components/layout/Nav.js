@@ -4,9 +4,29 @@ import { connect } from 'react-redux'
 
 class Nav extends React.Component {
   render() {
-    <div className="nav">
-      <Link>Login</Link>
-    </div>
+    const  { isAuthenticated, user } = this.props.auth
+    const authLinks = (
+      <Link to='/profile'>Profile</Link>
+    )
+
+    const guestLinks = (
+      <Link to='/login'>Login</Link>
+    )
+
+    return (
+      <div className="nav">
+        <div className="container">
+          <div className="title">
+            <Link to='/'>MailMaker</Link>
+          </div>
+          <div className="auth">
+            { isAuthenticated
+                ? authLinks
+                : guestLinks }
+          </div>
+        </div>
+      </div>
+    )
   }
 }
 

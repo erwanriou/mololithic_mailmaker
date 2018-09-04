@@ -1,0 +1,9 @@
+/* General */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}

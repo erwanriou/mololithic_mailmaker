@@ -2,8 +2,11 @@ import React, { Fragment } from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import PrivateRoute from './common/PrivateRoute'
+
 import Nav from './layout/Nav'
 import Landing from './layout/Landing'
+import Login from './auth/Login'
+import Dashboard from './dashboard/Dashboard'
 import Footer from './layout/Footer'
 
 import '../styles/reset.css'
@@ -17,6 +20,8 @@ class App extends React.Component {
         <Nav />
         <Switch>
           <Route exact path='/' component={Landing}/>
+          <Route exact path='/login' component={Login}/>
+          <PrivateRoute exact path='/dashboard' component={Dashboard}/>
         </Switch>
         <Footer />
       </Fragment>

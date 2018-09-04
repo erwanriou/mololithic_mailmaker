@@ -11,6 +11,7 @@ import Footer from './layout/Footer'
 
 import '../styles/reset.css'
 import '../styles/style.css'
+import '../styles/layout.css'
 import '../styles/nav.css'
 
 class App extends React.Component {

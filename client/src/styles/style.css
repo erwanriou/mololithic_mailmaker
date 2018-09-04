@@ -7,11 +7,6 @@ body {
   margin: 0 auto;
   max-width: 1200px;
 }
-
-main {
-  padding-top: 5rem;
-}
-
 /* Footer */
 footer {
   z-index: 500;

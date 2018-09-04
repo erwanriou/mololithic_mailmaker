@@ -6,9 +6,9 @@ import '../styles/reset.css'
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <Fragment>
         HELLO WORD
-      </div>
+      </Fragment>
     )
   }
 }

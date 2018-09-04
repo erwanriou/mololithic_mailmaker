@@ -6,7 +6,7 @@
   height: 920px;
 }
 .opacity {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
   position: absolute;
   z-index: 1;
   top: 0;
@@ -15,5 +15,9 @@
   height: 100%;
 }
 .layout .title {
-  padding-top: 7rem;
+  padding-top: 15rem;
+}
+.layout h1, .layout h2 {
+  padding: 0.5rem;
+  text-align: center;
 }

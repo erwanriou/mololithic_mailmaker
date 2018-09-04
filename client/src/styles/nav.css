@@ -10,9 +10,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: -moz-available;
-  height: -webkit-fill-available;
-  height: fill-available;
+  height: stretch;
   margin: 0 auto;
 }
 .nav a {

@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Link, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { fetchUser } from '../actions/authActions'
 
 import PrivateRoute from './common/PrivateRoute'
 
@@ -12,9 +14,14 @@ import Footer from './layout/Footer'
 import '../styles/reset.css'
 import '../styles/style.css'
 import '../styles/layout.css'
+import '../styles/login.css'
 import '../styles/nav.css'
 
 class App extends React.Component {
+  componentDidMount() {
+    this.props.fetchUser()
+  }
+
   render() {
     return (
       <Fragment>
@@ -30,4 +37,8 @@ class App extends React.Component {
   }
 }
 
-export default App
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+})
+
+export default withRouter(connect(mapStateToProps, { fetchUser })(App))

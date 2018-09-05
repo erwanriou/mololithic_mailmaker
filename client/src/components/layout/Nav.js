@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { logOut } from '../../actions/authActions'
+
 import icon from '../../utils/images/emailicon.png'
 
 class Nav extends React.Component {
+  logout() {
+    this.props.logout()
+  }
   render() {
     const  { isAuthenticated, user } = this.props.auth
     const authLinks = (
-      <Link to='/profile'>Profile</Link>
+      <Fragment>
+        <Link to='/dashboard'>Dashboard</Link>
+        <a onClick={this.logout}>
+          Logout
+        </a>
+      </Fragment>
+
     )
 
     const guestLinks = (
@@ -38,4 +49,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 })
 
-export default withRouter(connect(mapStateToProps)(Nav))
+export default withRouter(connect(mapStateToProps, { logOut })(Nav))

@@ -27,6 +27,7 @@ app.use(passport.session())
 
 // Passport config
 require('./services/passportGoogle')(passport)
+require('./services/passportJwt')(passport)
 
 // Connect to Mongodb
 mongoose

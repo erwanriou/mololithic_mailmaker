@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Route, Switch, Link, withRouter } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchUser } from '../actions/authActions'
 
@@ -37,8 +37,4 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  auth: state.auth,
-})
-
-export default withRouter(connect(mapStateToProps, { fetchUser })(App))
+export default withRouter(connect(null, { fetchUser })(App))

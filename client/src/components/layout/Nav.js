@@ -7,18 +7,19 @@ import icon from '../../utils/images/emailicon.png'
 
 class Nav extends React.Component {
   logout() {
-    this.props.logout()
+    this.props.logOut()
   }
   render() {
     const  { isAuthenticated, user } = this.props.auth
     const authLinks = (
       <Fragment>
         <Link to='/dashboard'>Dashboard</Link>
-        <a onClick={this.logout}>
+        <Link
+          to='/'
+          onClick={this.logout.bind(this)}>
           Logout
-        </a>
+        </Link>
       </Fragment>
-
     )
 
     const guestLinks = (

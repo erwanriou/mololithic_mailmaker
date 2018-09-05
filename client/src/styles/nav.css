@@ -16,10 +16,10 @@
 .nav a {
   font-size: 1rem;
   color: white;
+  margin-left: 1rem;
 }
 .nav img {
   width: 3rem;
-  margin-right: 0.5rem;
 }
 .nav .auth, .nav .title {
   display: flex;

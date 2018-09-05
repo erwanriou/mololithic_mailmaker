@@ -8,7 +8,7 @@ class Payments extends React.Component {
         <StripeCheckout
           className='stripe'
           amount={500}
-          currency="EURO"
+          currency="EUR"
           token={token => console.log(token)}
           stripeKey={process.env.REACT_APP_STRIPE_KEY}>
           <button>

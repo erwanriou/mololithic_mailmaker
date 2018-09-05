@@ -21,7 +21,7 @@ module.exports = passport => {
     new GoogleStrategy({
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback',
+      callbackURL: keys.absoluteURI + '/auth/google/callback',
       proxy: true
     },
     async (accessToken, refreshToken, profile, done) => {

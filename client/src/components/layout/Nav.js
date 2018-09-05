@@ -10,7 +10,8 @@ class Nav extends React.Component {
     this.props.logOut()
   }
   render() {
-    const  { isAuthenticated, user } = this.props.auth
+    const  { isAuthenticated, user, loading } = this.props.auth
+
     const authLinks = (
       <Fragment>
         <Link to='/dashboard'>Dashboard</Link>
@@ -23,7 +24,7 @@ class Nav extends React.Component {
     )
 
     const guestLinks = (
-      <Link to='/login'>Login</Link>
+      <Link to='/login'>Sign In</Link>
     )
 
     return (
@@ -36,8 +37,13 @@ class Nav extends React.Component {
             </div>
             <div className="auth">
               { isAuthenticated
-                  ? authLinks
-                  : guestLinks }
+                  ? loading
+                      ? <span>loading</span>
+                      : authLinks
+                  : loading
+                      ? <span>loading</span>
+                      : guestLinks
+              }
             </div>
           </div>
         </div>

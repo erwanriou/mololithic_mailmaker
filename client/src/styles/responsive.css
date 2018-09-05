@@ -1,0 +1,29 @@
+@media only screen and ( max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  .layout img {
+    width: 20rem;
+  }
+}
+
+@media only screen and ( max-width: 600px) {
+  .nav {
+    height: 6rem;
+  }
+  .layout img {
+    width: 10rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  .nav .menu {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

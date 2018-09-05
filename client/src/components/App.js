@@ -16,6 +16,7 @@ import '../styles/style.css'
 import '../styles/layout.css'
 import '../styles/login.css'
 import '../styles/nav.css'
+import '../styles/responsive.css'
 
 class App extends React.Component {
   componentDidMount() {

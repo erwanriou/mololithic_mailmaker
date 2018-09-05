@@ -1,7 +1,9 @@
 import axios from 'axios'
-import { FETCH_USER, LOGOUT } from './types'
+import { FETCH_USER, USER_LOGOUT } from './types'
+import { loading } from './index'
 
 export const fetchUser = () => async dispatch => {
+  dispatch(loading())
   const res = await axios.get('/api/users/user')
   dispatch({
     type: FETCH_USER,
@@ -10,8 +12,9 @@ export const fetchUser = () => async dispatch => {
 }
 
 export const logOut = () => async dispatch => {
-  const res = await axios.get('/api/users/logout')
+  dispatch(loading())
+  await axios.get('/api/users/logout')
   dispatch({
-    type: LOGOUT,
+    type: USER_LOGOUT,
   })
 }

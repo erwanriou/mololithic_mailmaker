@@ -13,7 +13,7 @@
   height: stretch;
   margin: 0 auto;
 }
-.nav a {
+.nav a, .nav span {
   font-size: 1rem;
   color: white;
   margin-left: 1rem;

@@ -14,6 +14,10 @@ h1 {
 h2 {
   font-size: 1.5rem;
 }
+.spinner img {
+  display: block;
+  width: 100px;
+}
 /* Footer */
 footer {
   z-index: 500;

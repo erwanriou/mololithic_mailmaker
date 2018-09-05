@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { logOut } from '../../actions/authActions'
 
 import icon from '../../utils/images/emailicon.png'
+import Spinner from '../common/Spinner'
 
 class Nav extends React.Component {
   logout() {
@@ -38,10 +39,10 @@ class Nav extends React.Component {
             <div className="auth">
               { isAuthenticated
                   ? loading
-                      ? <span>loading</span>
+                      ? <Spinner />
                       : authLinks
                   : loading
-                      ? <span>loading</span>
+                      ?  <Spinner />
                       : guestLinks
               }
             </div>

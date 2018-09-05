@@ -27,11 +27,9 @@ class App extends React.Component {
     return (
       <Fragment>
         <Nav />
-        <Switch>
           <Route exact path='/' component={Landing}/>
           <Route exact path='/login' component={Login}/>
           <PrivateRoute exact path='/dashboard' component={Dashboard}/>
-        </Switch>
         <Footer />
       </Fragment>
     )

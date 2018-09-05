@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { FETCH_USER, USER_LOGOUT } from './types'
+import { FETCH_USER, USER_LOGOUT, USER_LOGIN } from './types'
 import { loading } from './index'
 
 export const fetchUser = () => async dispatch => {
@@ -8,6 +8,14 @@ export const fetchUser = () => async dispatch => {
   dispatch({
     type: FETCH_USER,
     payload: res.data,
+  })
+}
+
+export const logIn = () => async dispatch => {
+  dispatch(loading())
+  await axios.get('/auth/google')
+  dispatch({
+    type: USER_LOGIN,
   })
 }
 

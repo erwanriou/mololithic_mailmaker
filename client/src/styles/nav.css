@@ -17,6 +17,9 @@
   font-size: 1rem;
   color: white;
 }
+.nav img {
+  width: 3rem;
+}
 .nav .auth, .nav .title {
   display: flex;
   align-items: center;

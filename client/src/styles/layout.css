@@ -15,7 +15,15 @@
   height: 100%;
 }
 .layout .title {
-  padding-top: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 8rem;
+}
+.layout img {
+  align-self: center;
+  width: 30rem;
+  margin-bottom: 2rem;
 }
 .layout h1, .layout h2 {
   padding: 0.5rem;

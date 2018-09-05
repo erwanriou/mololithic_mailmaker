@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import icon from '../../utils/images/emailicon.png'
 
 class Nav extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class Nav extends React.Component {
         <div className="container">
           <div className="menu">
             <div className="title">
+              <img src={icon} alt="Icon logo"/>
               <Link to='/'>MailMaker</Link>
             </div>
             <div className="auth">

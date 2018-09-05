@@ -30,8 +30,7 @@ module.exports = passport => {
       const user = await new User({ googleId: profile.id, email: email })
       existingUser
         ? done(null, existingUser)
-        : user.save()
-          done(null, user)
+        : user.save() && done(null, user)
     })
   )
 }

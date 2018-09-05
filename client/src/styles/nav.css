@@ -19,8 +19,13 @@
 }
 .nav img {
   width: 3rem;
+  margin-right: 0.5rem;
 }
 .nav .auth, .nav .title {
   display: flex;
   align-items: center;
+}
+
+.nav .auth a:hover {
+  color: #f97e7e;
 }

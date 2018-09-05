@@ -11,7 +11,6 @@ const router = express.Router()
 // @access private
 router.get('/user', (req, res) => {
   res.send(req.user)
-  res.json({ session: 'login'})
 })
 
 // @route  GET /api/users/logout

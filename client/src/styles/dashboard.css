@@ -1,0 +1,38 @@
+.submenu {
+  border-top: 1px #c3c3c3 solid;
+  position: fixed;
+  top: 3rem;
+  width: 100%;
+  background-color: #f38282;
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+}
+.submenu .transaction {
+  display: flex;
+  justify-content: flex-end;
+  height: 3.5rem;
+}
+.submenu span {
+  align-self: center;
+  margin-left: 1rem;
+  font-size: 1rem;
+  color: white;
+}
+.submenu span button {
+  margin-left: 1rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #ec4b4b;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 10px 0 rgba(46,61,73,.2);
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.submenu span button i {
+  font-size: 0.8rem;
+  margin-right: 1rem;
+}
+.submenu span button:hover {
+  box-shadow: 1px 1px 5px 0 rgba(46,61,73,.2);
+}

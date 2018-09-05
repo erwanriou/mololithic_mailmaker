@@ -13,6 +13,7 @@ import Footer from './layout/Footer'
 
 import '../styles/reset.css'
 import '../styles/style.css'
+import '../styles/dashboard.css'
 import '../styles/layout.css'
 import '../styles/login.css'
 import '../styles/nav.css'

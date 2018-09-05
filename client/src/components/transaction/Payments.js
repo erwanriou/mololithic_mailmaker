@@ -1,0 +1,23 @@
+import React from 'react'
+import StripeCheckout from 'react-stripe-checkout'
+
+
+class Payments extends React.Component {
+  render() {
+    return (
+        <StripeCheckout
+          className='stripe'
+          amount={500}
+          currency="EURO"
+          token={token => console.log(token)}
+          stripeKey={process.env.REACT_APP_STRIPE_KEY}>
+          <button>
+            <i className="fas fa-shopping-cart"></i>
+            Add Credit
+          </button>
+        </StripeCheckout>
+    )
+  }
+}
+
+export default Payments

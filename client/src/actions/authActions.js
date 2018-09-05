@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { FETCH_USER, USER_LOGOUT, USER_LOGIN } from './types'
+import { FETCH_USER, USER_LOGOUT } from './types'
 import { loading } from './index'
 
 export const fetchUser = () => async dispatch => {

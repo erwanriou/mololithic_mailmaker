@@ -8,7 +8,6 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import App from './components/App'
 import middleware from './middleware'
 import rooReducer from './reducers'
-import registerServiceWorker from './registerServiceWorker'
 
 const store = createStore(rooReducer, composeWithDevTools(middleware))
 
@@ -20,4 +19,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 )
-registerServiceWorker()

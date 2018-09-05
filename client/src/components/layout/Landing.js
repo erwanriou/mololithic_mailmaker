@@ -22,7 +22,7 @@ class Landing extends React.Component {
           ? layoutContent = <Spinner />
           : layoutContent = (
               <Fragment>
-                <Link to='/dashboard'>Dashboard</Link>
+                <Link to='/dashboard'> Go to your Dashboard</Link>
               </Fragment>
             )
     return (

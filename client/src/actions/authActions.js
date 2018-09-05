@@ -11,14 +11,6 @@ export const fetchUser = () => async dispatch => {
   })
 }
 
-export const logIn = () => async dispatch => {
-  dispatch(loading())
-  await axios.get('/auth/google')
-  dispatch({
-    type: USER_LOGIN,
-  })
-}
-
 export const logOut = () => async dispatch => {
   dispatch(loading())
   await axios.get('/api/users/logout')

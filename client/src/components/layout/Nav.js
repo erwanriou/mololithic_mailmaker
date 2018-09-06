@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logOut } from '../../actions/authActions'
 
@@ -58,4 +58,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 })
 
-export default withRouter(connect(mapStateToProps, { logOut })(Nav))
+export default connect(mapStateToProps, { logOut })(Nav)

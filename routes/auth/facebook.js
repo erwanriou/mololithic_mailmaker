@@ -16,7 +16,10 @@ router.get('/', passport.authenticate('facebook', {
 // @route  GET auth/facebook
 // @desc   Login user with google Oauth
 // @access Private
-router.get('/callback', passport.authenticate('facebook', { failureRedirect: '/' }), (req, res) => {
+router.get('/callback', passport.authenticate('facebook', {
+  successRedirect: '/',
+  failureRedirect: '/login'
+}), (req, res) => {
   res.redirect('/')
 })
 

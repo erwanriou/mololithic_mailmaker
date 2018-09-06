@@ -15,7 +15,7 @@ class Login extends React.Component {
                 <i className="fab fa-google-plus-g"></i>
                 <span>Sign In with google</span>
               </a>
-              <a href='/auth/google' className="facebook">
+              <a href='/auth/facebook' className="facebook">
                 <i className="fab fa-facebook-f"></i>
                 <span>Sign In with facebook</span>
               </a>

@@ -41,7 +41,7 @@ mongoose
 
 // Use Routes
 app.use('/auth/google', google)
-// app.use('/auth/facebook', facebook)
+app.use('/auth/facebook', facebook)
 app.use('/api/users', users)
 
 // Production Setup

@@ -24,20 +24,20 @@ const keys = require('./config/keys').keys
 // DB config
 const db = require('./config/keys').keys
 
-// Middleware
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json())
-app.use(requestIP.mw())
-app.use(cookieSession({ maxAge: 24 * 60 * 60 * 1000,  keys: [keys.cookie.secret] }))
-
-// Passport config
-app.use(passport.initialize())
-app.use(passport.session())
 // Connect to Mongodb
 mongoose
   .connect(db.mongo.url(), db.mongo.options)
   .then(() => console.log('Mongodb Connected'))
   .catch(err => console.error(err))
+
+// Middleware
+app.use(bodyParser.json())
+app.use(requestIP.mw())
+
+// Passport config
+app.use(cookieSession({ maxAge: 24 * 60 * 60 * 1000,  keys: [keys.cookie.secret] }))
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Use Routes
 app.use('/auth/google', google)

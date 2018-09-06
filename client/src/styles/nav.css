@@ -18,14 +18,17 @@
   color: white;
   margin-left: 1rem;
 }
-.nav img {
+.nav .title img {
   width: 3rem;
 }
 .nav .auth, .nav .title {
   display: flex;
   align-items: center;
 }
-
 .nav .auth a:hover {
   color: #f97e7e;
+}
+.nav .auth img {
+  border-radius: 2rem;
+  width: 2rem;
 }

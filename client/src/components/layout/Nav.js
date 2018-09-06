@@ -15,6 +15,7 @@ class Nav extends React.Component {
 
     const authLinks = (
       <Fragment>
+        <img src={user.avatar} alt={user.name}/>
         <Link to='/dashboard'>Dashboard</Link>
         <Link
           to='/'

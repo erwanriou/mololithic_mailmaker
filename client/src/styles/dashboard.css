@@ -6,9 +6,18 @@
   background-color: #f38282;
   box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
 }
+.submenu .submenucontent {
+  display: flex;
+  justify-content: space-between;
+}
 .submenu .transaction {
   display: flex;
   justify-content: flex-end;
+  height: 3.5rem;
+}
+.submenu .title {
+  display: flex;
+  justify-content: flex-start;
   height: 3.5rem;
 }
 .submenu span {

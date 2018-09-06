@@ -26,7 +26,6 @@ module.exports = passport => {
       proxy: true
     },
     async (accessToken, refreshToken, profile, done) => {
-      console.log(profile);
       const email = profile.emails[0].value
       const existingUser = await User.findOne({ email: email })
       const user = await new User({

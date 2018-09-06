@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 // Create UserSchema
 const UserSchema = new Schema({
-  googleId: {
+  oauthId: {
     type: String,
     default: null
   },
@@ -19,6 +19,10 @@ const UserSchema = new Schema({
   },
   avatar: {
     type: String,
+  },
+  created: {
+    type: Date,
+    default: Date.now,
   },
 })
 

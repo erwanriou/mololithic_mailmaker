@@ -26,9 +26,9 @@ module.exports = passport => {
     },
     async (accessToken, refreshToken, profile, done) => {
       const email = profile.emails[0].value
-      const existingUser = await User.findOne({ googleId: profile.id })
+      const existingUser = await User.findOne({ email: email })
       const user = await new User({
-        googleId: profile.id,
+        oauthId: profile.id,
         email: email,
         name: profile.displayName,
         avatar: profile.photos[0].value

@@ -22,7 +22,8 @@ const keys = {
     ClientSecret: process.env.STRIPE_SECRET_OR_KEY,
   },
   facebook: {
-
+    ClientID: process.env.FACEBOOK_CLIENT_ID,
+    ClientSecret: process.env.FACEBOOK_SECRET_OR_KEY,
   },
 }
 

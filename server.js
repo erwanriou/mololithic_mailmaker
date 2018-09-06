@@ -7,6 +7,7 @@ const path = require('path')
 
 // Import routes
 const google = require('./routes/auth/google')
+const facebook = require('./routes/auth/facebook')
 const users = require('./routes/api/users')
 
 // Run Express
@@ -27,6 +28,7 @@ app.use(passport.session())
 
 // Passport config
 require('./services/passportGoogle')(passport)
+require('./services/passportFacebook')(passport)
 require('./services/passportJwt')(passport)
 
 // Connect to Mongodb
@@ -37,6 +39,7 @@ mongoose
 
 // Use Routes
 app.use('/auth/google', google)
+app.use('/auth/facebook', facebook)
 app.use('/api/users', users)
 
 // Production Setup

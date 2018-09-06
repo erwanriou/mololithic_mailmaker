@@ -2,6 +2,11 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": {
+    "(auth|^/api)/[a-z]": {
+      "target": "http://localhost:5000"
+    }
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.4.2",
@@ -19,10 +24,5 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "proxy": {
-		"(auth|^/api)/[a-z]": {
-			"target": "http://localhost:5000"
-		}
-	},
+  }
 }

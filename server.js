@@ -23,8 +23,7 @@ const db = require('./config/keys').keys
 app.use(cookieSession({ maxAge: 24 * 60 * 60 * 1000,  keys: [keys.cookie.secret] }))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
-app.use(passport.initialize())
-app.use(passport.session())
+
 
 // Passport config
 require('./services/passportGoogle')(passport)
@@ -46,7 +45,7 @@ app.use('/api/users', users)
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'))
   })
 }
 

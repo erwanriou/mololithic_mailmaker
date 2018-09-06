@@ -19,7 +19,7 @@ const keys = require('./config/keys').keys
 const db = require('./config/keys').keys
 
 // Middleware
-app.use(cookieSession({ maxAge: 24 * 60 * 60 * 1000,  keys: [keys.cookieKey] }))
+app.use(cookieSession({ maxAge: 24 * 60 * 60 * 1000,  keys: [keys.cookie.secret] }))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.use(passport.initialize())
@@ -31,7 +31,7 @@ require('./services/passportJwt')(passport)
 
 // Connect to Mongodb
 mongoose
-  .connect(db.url(), db.options)
+  .connect(db.mongo.url(), db.mongo.options)
   .then(() => console.log('Mongodb Connected'))
   .catch(err => console.error(err))
 

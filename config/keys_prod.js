@@ -1,15 +1,28 @@
 const keys = {
-  secret: process.env.SECRET_OR_KEY,
-  googleClientID: process.env.GOOGLE_CLIENT_ID,
-  googleClientSecret: process.env.GOOGLE_SECRET_OR_KEY,
-  stripePublishableKey: process.env.STRIPE_CLIENT_ID,
-  stripeSecretKey: process.env.STRIPE_SECRET_OR_KEY,
-  cookieKey: process.env.COOKIE_KEY,
-  url : function() {
-    return process.env.MONGO_URI
+  mongo: {
+    url : function() {
+      return process.env.MONGO_URI
+    },
+    options : {
+      useNewUrlParser: true,
+    },
   },
-  options : {
-    useNewUrlParser: true,
+  cookie: {
+    secret: process.env.COOKIE_KEY,
+  },
+  jwt: {
+    secret: process.env.SECRET_OR_KEY,
+  },
+  google: {
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_SECRET_OR_KEY,
+  },
+  stripe: {
+    ClientID: process.env.STRIPE_CLIENT_ID,
+    ClientSecret: process.env.STRIPE_SECRET_OR_KEY,
+  },
+  facebook: {
+
   },
 }
 

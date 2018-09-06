@@ -27,7 +27,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 // Passport config
-// require('./services/passportGoogle')(passport)
+require('./services/passportGoogle')(passport)
 require('./services/passportFacebook')(passport)
 require('./services/passportJwt')(passport)
 

@@ -16,6 +16,7 @@ const keys = {
   google: {
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_SECRET_OR_KEY,
+    callbackURL: process.env.GOOGLE_CALLBACK,
   },
   stripe: {
     ClientID: process.env.STRIPE_CLIENT_ID,
@@ -24,6 +25,7 @@ const keys = {
   facebook: {
     ClientID: process.env.FACEBOOK_CLIENT_ID,
     ClientSecret: process.env.FACEBOOK_SECRET_OR_KEY,
+    callbackURL: process.env.FACEBOOK_CALLBACK,
   },
 }
 

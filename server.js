@@ -3,12 +3,17 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cookieSession = require('cookie-session')
 const passport = require('passport')
-const path = require('path')
+const requestIP = require('request-ip')
 
 // Import routes
 const google = require('./routes/auth/google')
 const facebook = require('./routes/auth/facebook')
 const users = require('./routes/api/users')
+
+//import strategies
+require('./services/passportGoogle')(passport)
+require('./services/passportFacebook')(passport)
+require('./services/passportJwt')(passport)
 
 // Run Express
 const app = express()
@@ -20,16 +25,14 @@ const keys = require('./config/keys').keys
 const db = require('./config/keys').keys
 
 // Middleware
-app.use(cookieSession({ maxAge: 24 * 60 * 60 * 1000,  keys: [keys.cookie.secret] }))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
-
+app.use(requestIP.mw())
+app.use(cookieSession({ maxAge: 24 * 60 * 60 * 1000,  keys: [keys.cookie.secret] }))
 
 // Passport config
-require('./services/passportGoogle')(passport)
-require('./services/passportFacebook')(passport)
-require('./services/passportJwt')(passport)
-
+app.use(passport.initialize())
+app.use(passport.session())
 // Connect to Mongodb
 mongoose
   .connect(db.mongo.url(), db.mongo.options)
@@ -44,6 +47,7 @@ app.use('/api/users', users)
 // Production Setup
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
+  const path = require('path')
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'))
   })

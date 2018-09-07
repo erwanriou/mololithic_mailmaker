@@ -26,7 +26,10 @@ class Nav extends React.Component {
     )
 
     const guestLinks = (
-      <Link to='/login'>Sign In</Link>
+      <Fragment>
+        <Link to='/register'>Register</Link>
+        <Link to='/login'>Sign-In</Link>
+      </Fragment>
     )
 
     return (

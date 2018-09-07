@@ -30,7 +30,6 @@ router.get('/logout', (req, res) => {
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',
-    failureFlash: true
 }))
 
 // @route  Post /api/users/register

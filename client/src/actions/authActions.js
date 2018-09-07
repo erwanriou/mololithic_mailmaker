@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { FETCH_USER, USER_LOGOUT } from './types'
+import { FETCH_USER, USER_LOGOUT, GET_ERRORS } from './types'
 import { loading } from './index'
 
 export const fetchUser = () => async dispatch => {
@@ -17,4 +17,16 @@ export const logOut = () => async dispatch => {
   dispatch({
     type: USER_LOGOUT,
   })
+}
+
+export const registerUser = (userData, history) => dispatch => {
+  axios
+    .post('/api/users/register', userData)
+    .then(res => history.push('/login'))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data,
+      })
+    )
 }

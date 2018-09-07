@@ -11,7 +11,7 @@ class Login extends React.Component {
               <h1> Login in the application</h1>
               <h2> You can choose by Sign-In with google, facebook or password authentification</h2>
             </div>
-            <div className="auth">
+            <div className="auth login">
               <a href='/auth/google' className="google">
                 <i className="fab fa-google-plus-g"></i>
                 <span>Sign In with google</span>
@@ -20,6 +20,7 @@ class Login extends React.Component {
                 <i className="fab fa-facebook-f"></i>
                 <span>Sign In with facebook</span>
               </a>
+              <h3>Or Login here</h3>
               <form
                 className='authform'
                 action="/api/users/login"
@@ -34,9 +35,7 @@ class Login extends React.Component {
                   name='password'
                   type='password'
                 />
-                <button
-                  type='submit'
-                  className='submitbtn'>
+                <button type='submit'>
                   Login
                 </button>
               </form>

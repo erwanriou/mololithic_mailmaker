@@ -2,17 +2,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 1rem auto;
-  height: 30rem;
   width: 30rem;
   background-color: white;
   border: 1px solid #dedede;
   box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
 }
+.login {
+  height: 32rem;
+}
+.register {
+  height: 38rem;
+}
 .auth .google, .auth .facebook {
   display: flex;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   border-radius: 0.5rem;
   overflow: hidden;
   height: 3rem;
@@ -48,8 +54,39 @@
 .auth .facebook span:hover {
   background-color: #55759e;
 }
+.auth h3 {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
 .authform {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
+}
+.authform input {
+  width: 13rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid #cccbcb;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+}
+.authform button {
+  width: 15rem;
+  padding: 0.7rem 1rem;
+  border: none;
+  background-color: #819abf;
+  color: white;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+.authform input:focus, .authformform button:focus {
+  outline:none;
+  border: 1px solid #8d8def;
+}
+.authform p {
+  color: red;
+  margin-left: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
 }

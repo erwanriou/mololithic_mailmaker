@@ -21,14 +21,14 @@
 .nav .title img {
   width: 3rem;
 }
-.nav .auth, .nav .title {
+.nav .authlink, .nav .title {
   display: flex;
   align-items: center;
 }
-.nav .auth a:hover {
+.nav .authlink a:hover {
   color: #f97e7e;
 }
-.nav .auth img {
+.nav .authlink img {
   border-radius: 2rem;
   width: 2rem;
 }

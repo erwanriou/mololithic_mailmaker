@@ -27,36 +27,11 @@ router.get('/logout', (req, res) => {
 // @route  GET /api/users/Login
 // @desc   Login from local session
 // @access public
-// router.post('/login',passport.authenticate('local'), (req, res) => {
-//   const { errors, isValid } = validateLoginInput(req.body)
-//   //Check Validation
-//   if (!isValid) {
-//     return res.status(400).json(errors)
-//   }
-//   const user = req.user
-//   res.json({
-//     name: user.name,
-//     email: user.email,
-//     avatar: user.avatar
-//   })
-// })
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',
     failureFlash: true
-}), (req, res) => {
-  const { errors, isValid } = validateLoginInput(req.body)
-  //Check Validation
-  if (!isValid) {
-    return res.status(400).json(errors)
-  }
-  const user = req.user
-  res.json({
-    name: user.name,
-    email: user.email,
-    avatar: user.avatar
-  })
-})
+}))
 
 // @route  Post /api/users/register
 // @desc   register users localy

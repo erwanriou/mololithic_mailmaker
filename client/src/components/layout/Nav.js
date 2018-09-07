@@ -37,7 +37,7 @@ class Nav extends React.Component {
               <img src={icon} alt="Icon logo"/>
               <Link to='/'>MailMaker</Link>
             </div>
-            <div className="auth">
+            <div className="authlink">
               { isAuthenticated
                   ? loading
                       ? <Spinner />

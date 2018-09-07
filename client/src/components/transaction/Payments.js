@@ -13,7 +13,7 @@ class Payments extends React.Component {
           stripeKey={process.env.REACT_APP_STRIPE_KEY}>
           <button>
             <i className="fas fa-shopping-cart"></i>
-            Add Credit
+            <span>Add Credit</span>
           </button>
         </StripeCheckout>
     )

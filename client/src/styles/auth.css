@@ -79,6 +79,10 @@
   border-radius: 0.5rem;
   margin: 0.5rem;
   cursor: pointer;
+  transition: background-color 0.2s ease; 
+}
+.authform button:hover {
+  background-color: #394d69;
 }
 .authform input:focus, .authformform button:focus {
   outline:none;

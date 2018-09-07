@@ -7,7 +7,14 @@
     width: 20rem;
   }
 }
-
+@media only screen and ( max-width: 900px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+}
 @media only screen and ( max-width: 600px) {
   .nav {
     height: 6rem;
@@ -25,5 +32,19 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+  }
+  .submenu {
+    top: 6rem;
+  }
+  .submenu span button span {
+    display: none;
+  }
+  .submenu span button i {
+    margin-right: 0;
+  }
+}
+@media only screen and ( max-width: 550px) {
+  .auth {
+    width: 20rem;
   }
 }

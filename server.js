@@ -13,7 +13,6 @@ const users = require('./routes/api/users')
 //import strategies
 require('./services/passportGoogle')(passport)
 require('./services/passportFacebook')(passport)
-require('./services/passportJwt')(passport)
 
 // Run Express
 const app = express()

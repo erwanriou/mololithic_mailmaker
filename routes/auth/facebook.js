@@ -16,9 +16,8 @@ router.get('/', passport.authenticate('facebook', {
 // @route  GET auth/facebook
 // @desc   Login user with google Oauth
 // @access Private
-router.get('/callback', passport.authenticate('facebook', {
-  successRedirect: '/',
-  failureRedirect: '/login'
-}))
+router.get('/callback', passport.authenticate('facebook'), (req, res) => {
+  res.redirect('/')
+})
 
 module.exports = router

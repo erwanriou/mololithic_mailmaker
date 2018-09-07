@@ -13,6 +13,7 @@ const users = require('./routes/api/users')
 //import strategies
 require('./services/passportGoogle')(passport)
 require('./services/passportFacebook')(passport)
+require('./services/passportLocal')(passport)
 
 // Run Express
 const app = express()
@@ -30,6 +31,7 @@ mongoose
   .catch(err => console.error(err))
 
 // Middleware
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.use(requestIP.mw())
 

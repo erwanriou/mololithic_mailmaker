@@ -1,6 +1,5 @@
 const LocalStrategy = require('passport-local').Strategy
 const mongoose = require('mongoose')
-const bcrypt = require('bcryptjs')
 
 const User = mongoose.model('users')
 
@@ -22,12 +21,14 @@ module.exports = passport => {
       usernameField: 'email',
     },
     async (email, password, done) => {
-      const user = await User.findOne({ email: email })
-      !user && done(null, false, 'User Does not exist')
-      bcrypt.compare(password, user.password, (err, res) => {
-        err && done(null, false)
-        !res ? done(null, false) : done(null, user)
-      })
+      try {
+        const user = await User.findOne({ email: email })
+        !user || !user.validPassword(password)
+          ? done(null, false, { message: "Invalid username/password" })
+          : done(null, user)
+      } catch (e) {
+        e => done(e)
+      }
     })
   )
 }

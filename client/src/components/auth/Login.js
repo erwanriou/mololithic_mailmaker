@@ -1,4 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+import { logIn } from '../../actions/authActions'
 
 class Login extends React.Component {
   render() {
@@ -19,6 +22,23 @@ class Login extends React.Component {
                 <i className="fab fa-facebook-f"></i>
                 <span>Sign In with facebook</span>
               </a>
+              <form action="/api/users/login" method="post">
+                <input
+                  placeholder='Your Email'
+                  name='email'
+                  type='email'
+                />
+                <input
+                  title='Required Password'
+                  name='password'
+                  type='password'
+                />
+                <button
+                  type='submit'
+                  className='submitbtn'>
+                  Login
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -26,7 +46,5 @@ class Login extends React.Component {
     )
   }
 }
-
-
 
 export default Login

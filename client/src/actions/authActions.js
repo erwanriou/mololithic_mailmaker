@@ -11,6 +11,15 @@ export const fetchUser = () => async dispatch => {
   })
 }
 
+export const handleCredit = (token) => async dispatch => {
+  dispatch(loading())
+  const res = await axios.post('/api/stripe', token)
+  dispatch({
+    type: FETCH_USER,
+    payload: res.data,
+  })
+}
+
 export const logOut = () => async dispatch => {
   dispatch(loading())
   await axios.get('/api/users/logout')
@@ -19,7 +28,7 @@ export const logOut = () => async dispatch => {
   })
 }
 
-export const registerUser = (userData, history) => dispatch => {
+export const registerUser = (userData, history) => async dispatch => {
   axios
     .post('/api/users/register', userData)
     .then(res => history.push('/login'))

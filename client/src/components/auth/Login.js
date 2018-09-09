@@ -1,7 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 class Login extends React.Component {
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push('/dashboard')
+    }
+  }
+  componentDidUpdate(prevProps) {
+    const { isAuthenticated } = this.props.auth;
+    if (isAuthenticated) {
+      this.props.history.push('/dashboard');
+    }
+  }
   render() {
     return (
       <main className='layout'>
@@ -50,4 +62,8 @@ class Login extends React.Component {
   }
 }
 
-export default Login
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+})
+
+export default withRouter(connect(mapStateToProps)(Login))

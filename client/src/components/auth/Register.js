@@ -27,6 +27,10 @@ class Register extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
+    const { isAuthenticated } = this.props.auth;
+    if (isAuthenticated) {
+      this.props.history.push('/dashboard');
+    }
     if (prevProps.errors !== this.props.errors) {
     this.setState({ errors: this.props.errors });
     }

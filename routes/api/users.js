@@ -28,7 +28,7 @@ router.get('/logout', (req, res) => {
 // @desc   Login from local session
 // @access public
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/',
+    successRedirect: '/dashboard',
     failureRedirect: '/login',
 }))
 

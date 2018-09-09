@@ -39,6 +39,7 @@
     "passport-google-oauth20": "^1.0.0",
     "passport-local": "^1.0.0",
     "request-ip": "^2.1.1",
+    "stripe": "^6.10.0",
     "validator": "^10.7.1"
   },
   "devDependencies": {

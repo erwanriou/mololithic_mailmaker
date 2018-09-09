@@ -17,7 +17,7 @@ router.get('/', passport.authenticate('google', {
 // @desc   Login user with google Oauth
 // @access Private
 router.get('/callback', passport.authenticate('google'), (req, res) => {
-  res.redirect('/')
+  res.redirect('/dashboard')
 })
 
 module.exports = router

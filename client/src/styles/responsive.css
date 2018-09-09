@@ -48,3 +48,9 @@
     width: 20rem;
   }
 }
+/* Iphone 5 responsive */
+@media only screen and ( max-width: 320px) {
+  .auth {
+    width: 18rem;
+  }
+}

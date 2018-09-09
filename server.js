@@ -9,6 +9,7 @@ const requestIP = require('request-ip')
 const google = require('./routes/auth/google')
 const facebook = require('./routes/auth/facebook')
 const users = require('./routes/api/users')
+const stripe = require('./routes/api/stripe')
 
 //import strategies
 require('./services/passportGoogle')(passport)
@@ -44,6 +45,7 @@ app.use(passport.session())
 app.use('/auth/google', google)
 app.use('/auth/facebook', facebook)
 app.use('/api/users', users)
+app.use('/api/stripe', stripe)
 
 // Production Setup
 if (process.env.NODE_ENV === 'production') {

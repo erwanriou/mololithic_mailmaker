@@ -21,18 +21,15 @@ class Register extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.auth.isAuthenticated) {
-      this.props.history.push('/dashboard')
-    }
+    const { isAuthenticated } = this.props.auth
+    isAuthenticated && this.props.history.push('/dashboard')
   }
 
   componentDidUpdate(prevProps) {
-    const { isAuthenticated } = this.props.auth;
-    if (isAuthenticated) {
-      this.props.history.push('/dashboard');
-    }
+    const { isAuthenticated } = this.props.auth
+    isAuthenticated && this.props.history.push('/dashboard')
     if (prevProps.errors !== this.props.errors) {
-    this.setState({ errors: this.props.errors });
+    this.setState({ errors: this.props.errors })
     }
   }
 
@@ -129,6 +126,4 @@ const mapStateToProps = (state) => ({
   errors: state.errors,
 })
 
-export default withRouter(
-  connect(mapStateToProps, { registerUser })(Register)
-)
+export default withRouter(connect(mapStateToProps, { registerUser })(Register))

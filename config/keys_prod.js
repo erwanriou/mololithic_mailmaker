@@ -18,15 +18,15 @@ const keys = {
     clientSecret: process.env.GOOGLE_SECRET_OR_KEY,
     callbackURL: process.env.GOOGLE_CALLBACK,
   },
-  stripe: {
-    clientID: process.env.STRIPE_CLIENT_ID,
-    clientSecret: process.env.STRIPE_SECRET_OR_KEY,
-  },
   facebook: {
     clientID: process.env.FACEBOOK_CLIENT_ID,
     clientSecret: process.env.FACEBOOK_SECRET_OR_KEY,
     callbackURL: process.env.FACEBOOK_CALLBACK,
   },
+  stripe: {
+    clientID: process.env.STRIPE_CLIENT_ID,
+    clientSecret: process.env.STRIPE_SECRET_OR_KEY,
+  }
 }
 
 exports.keys = keys

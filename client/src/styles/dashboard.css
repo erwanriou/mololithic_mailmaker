@@ -26,6 +26,10 @@
   font-size: 1rem;
   color: white;
 }
+.submenu span strong {
+  font-weight: bold;
+
+}
 .submenu span button {
   margin-left: 1rem;
   font-size: 1rem;

@@ -4,15 +4,12 @@ import { connect } from 'react-redux'
 
 class Login extends React.Component {
   componentDidMount() {
-    if (this.props.auth.isAuthenticated) {
-      this.props.history.push('/dashboard')
-    }
+    const { isAuthenticated } = this.props.auth
+    isAuthenticated && this.props.history.push('/dashboard')
   }
   componentDidUpdate(prevProps) {
-    const { isAuthenticated } = this.props.auth;
-    if (isAuthenticated) {
-      this.props.history.push('/dashboard');
-    }
+    const { isAuthenticated } = this.props.auth
+    isAuthenticated && this.props.history.push('/dashboard')
   }
   render() {
     return (

@@ -20,7 +20,7 @@ class Dashboard extends React.Component {
             </div>
           </div>
         </div>
-        <main className='dashboard'>
+        <main className='dashboard container'>
          DASHBOARD HERE
         </main>
       </Fragment>

@@ -2,6 +2,7 @@ const express = require('express')
 
 const keys = require('../../config/keys').keys
 const User = require('../../models/User')
+const requireLogin = require('../../middlewares/requireLogin')
 const stripe = require('stripe')(keys.stripe.clientSecret)
 
 const router = express.Router()
@@ -9,7 +10,7 @@ const router = express.Router()
 // @route  POST /api/stripe
 // @desc   get the credit token from payment
 // @access private
-router.post('/', async (req, res) => {
+router.post('/', requireLogin, async (req, res) => {
   const charge = await stripe.charges.create({
     amount: 500,
     currency: 'EUR',

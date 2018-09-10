@@ -20,8 +20,12 @@ class Dashboard extends React.Component {
             </div>
           </div>
         </div>
-        <main className='dashboard container'>
-         DASHBOARD HERE
+        <main className='dashboard'>
+          <div className="opacity">
+            <div className="container">
+               DASHBOARD HERE
+            </div>
+          </div>
         </main>
       </Fragment>
     )

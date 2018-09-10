@@ -1,4 +1,6 @@
 .submenu {
+  position: relative;
+  z-index: 10;
   border-top: 1px #c3c3c3 solid;
   position: fixed;
   top: 3rem;
@@ -52,4 +54,9 @@
 }
 .dashboard {
   padding-top: 7rem;
+  position: relative;
+  z-index: 1;
+  background: url('../utils/images/email4.jpeg') no-repeat;
+  background-size: cover;
+  height: 820px;
 }

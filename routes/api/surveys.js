@@ -2,6 +2,9 @@ const express = require('express')
 const requireLogin = require('../../middlewares/requireLogin')
 const requireCredit = require('../../middlewares/requireCredit')
 
+const Mailer = require('../../services/Mailer')
+const emailTemplate = require('../../services/emailTemplates/emailTemplate1')
+
 const User = require('../../models/User')
 const Survey = require('../../models/Survey')
 const validateSurveyInput = require('../../validation/survey')
@@ -25,8 +28,18 @@ router.post('/new', requireLogin, requireCredit, async (req, res) => {
       .split(',')
       .map(email => ({ email: email.trim() }))
   })
-  const newSurvey = await survey.save()
-  res.json(newSurvey)
+  // Send email
+  const mailer = new Mailer(survey, emailTemplate(survey))
+
+  try {
+    await mailer.send()
+    await survey.save()
+    req.user.credits -= 1
+    const user = await req.user.save()
+    res.send(user)
+  } catch (err) {
+    res.status(422).send(err)
+  }
 })
 
 module.exports = router

@@ -26,6 +26,9 @@ const keys = {
   stripe: {
     clientID: process.env.STRIPE_CLIENT_ID,
     clientSecret: process.env.STRIPE_SECRET_OR_KEY,
+  },
+  sendgrid: {
+    apiKey: process.env.SEND_GRID_KEY,
   }
 }
 

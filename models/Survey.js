@@ -28,9 +28,6 @@ const SurveySchema = new Schema({
     type: Number,
     default: 0,
   },
-  dateSent: {
-    type: Date,
-  },
   lastResponded: {
     type: Date,
   },

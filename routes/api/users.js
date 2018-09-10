@@ -38,9 +38,7 @@ router.post('/login', passport.authenticate('local', {
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body)
   //Check Validation
-  if (!isValid) {
-    return res.status(400).json(errors)
-  }
+  !isValid && res.status(400).json(errors)
   //Check if user exist, then create
   User.findOne({ email: req.body.email })
     .then(user => {

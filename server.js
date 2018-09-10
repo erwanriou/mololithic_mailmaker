@@ -10,6 +10,7 @@ const google = require('./routes/auth/google')
 const facebook = require('./routes/auth/facebook')
 const users = require('./routes/api/users')
 const stripe = require('./routes/api/stripe')
+const surveys = require('./routes/api/surveys')
 
 //import strategies
 require('./services/passportGoogle')(passport)
@@ -46,6 +47,7 @@ app.use('/auth/google', google)
 app.use('/auth/facebook', facebook)
 app.use('/api/users', users)
 app.use('/api/stripe', stripe)
+app.use('/api/surveys', surveys)
 
 // Production Setup
 if (process.env.NODE_ENV === 'production') {

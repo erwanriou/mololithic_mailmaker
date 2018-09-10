@@ -14,7 +14,7 @@ class Dashboard extends React.Component {
                 <span>Welcome {user.name}!</span>
               </div>
               <div className="transaction">
-                <span> <strong>{user.credits}</strong> credits</span>
+                <span><strong>{user.credits}</strong> credits</span>
                 <Payments />
               </div>
             </div>

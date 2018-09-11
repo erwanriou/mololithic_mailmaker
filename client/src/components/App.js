@@ -10,6 +10,7 @@ import Landing from './layout/Landing'
 import Login from './auth/Login'
 import Register from './auth/Register'
 import Dashboard from './dashboard/Dashboard'
+import NewSurvey from './dashboard/NewSurvey'
 import Footer from './layout/Footer'
 
 import '../styles/reset.css'
@@ -34,6 +35,7 @@ class App extends React.Component {
           <Route exact path='/login' component={Login}/>
           <Route exact path='/register' component={Register}/>
           <PrivateRoute exact path='/dashboard' component={Dashboard}/>
+          <PrivateRoute exact path='/dashboard/new' component={NewSurvey}/>
         </Switch>
         <Footer />
       </Fragment>

@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import Payments from '../transaction/Payments'
 
 class Dashboard extends React.Component {
@@ -23,7 +24,13 @@ class Dashboard extends React.Component {
         <main className='dashboard'>
           <div className="opacity">
             <div className="container">
-               DASHBOARD HERE
+              <Link className='createsurvey' to='/dashboard/new'>
+                <i className="fas fa-pen"></i>
+                <div className='content'>
+                  <h2>New Survey</h2>
+                  <p>Click here to create a new marketing email campaign</p>
+                </div>
+              </Link>
             </div>
           </div>
         </main>

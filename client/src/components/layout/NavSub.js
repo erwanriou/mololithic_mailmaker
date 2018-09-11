@@ -1,27 +1,23 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Payments from '../transaction/Payments'
 
 class NavSub extends React.Component {
   render() {
-    const  { user } = this.props
-    let goBack
+    const  { user, step1, step2 } = this.props
+    let steps
 
-    this.props.back
-      ? goBack = (
-          <Link to='/dashboard'>
-            <i className="fas fa-arrow-left"></i>
-            <span>Go Dashboard</span>
-          </Link>
-        )
-      : goBack = (<span>Welcome {user.name}!</span>)
+    step1
+      ? step2
+          ? steps = (<span>Step 2 - Review your form!</span>)
+          : steps = (<span>Step 1 - Fill out the form!</span>)
+      : steps = (<span>Welcome {user.name}!</span>)
 
     return (
       <div className="submenu">
         <div className="container">
           <div className="submenucontent">
             <div className="title">
-              {goBack}
+              {steps}
             </div>
             <div className="transaction">
               <span><strong>{user.credits}</strong> credits</span>

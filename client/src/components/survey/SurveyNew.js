@@ -4,31 +4,42 @@ import { sendSurvey } from '../../actions/authActions'
 
 import NavSub from '../layout/NavSub'
 import SurveyForm from './SurveyForm'
+import SurveyFormReview from './SurveyFormReview'
 
 class SurveyNew extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      back: true,
+      showForm: true,
+      showFormReview: false,
     }
   }
 
   render() {
     const  { user } = this.props.auth
-    const { back } = this.state
+    const { showForm, showFormReview } = this.state
     let createSurvey
 
-    createSurvey = (
-      <div className='createsurveyform'>
-        <h2>Fill out the Survey form to create your email campaign...</h2>
-        <SurveyForm />
-      </div>
-    )
+    showFormReview
+      ? createSurvey = (
+          <div className='createsurveyform'>
+            <h2>Review your survey NOW</h2>
+            <SurveyFormReview />
+          </div>
+        )
+      : createSurvey = (
+          <div className='createsurveyform'>
+            <h2>Fill out the Survey form to create your email campaign...</h2>
+            <SurveyForm onSurveySubmit={() => {
+              this.setState({ showFormReview: true })
+            }}/>
+          </div>
+        )
 
 
     return (
       <Fragment>
-        <NavSub user={user} back={back}/>
+        <NavSub user={user} step1={showForm} step2={showFormReview}/>
         <main className='dashboard'>
           <div className="opacity">
             <div className="container">

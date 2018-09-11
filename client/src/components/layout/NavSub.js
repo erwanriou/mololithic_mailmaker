@@ -4,15 +4,14 @@ import Payments from '../transaction/Payments'
 
 class NavSub extends React.Component {
   render() {
-    const  { user, back } = this.props
-
+    const  { user } = this.props
     let goBack
 
     this.props.back
       ? goBack = (
           <Link to='/dashboard'>
             <i className="fas fa-arrow-left"></i>
-            <span>GO BACK</span>
+            <span>Go Dashboard</span>
           </Link>
         )
       : goBack = (<span>Welcome {user.name}!</span>)

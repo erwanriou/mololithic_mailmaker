@@ -42,10 +42,16 @@
   .submenu span button i {
     margin-right: 0;
   }
+  .dashboard .createsurveyitem {
+    top: 10rem;
+  }
 }
 @media only screen and ( max-width: 550px) {
   .auth {
     width: 20rem;
+  }
+  .dashboard .createsurveyitem i, .dashboard .createsurveyitem .content {
+    padding: 0 2rem;
   }
 }
 /* Iphone 5 responsive */

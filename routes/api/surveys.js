@@ -10,7 +10,12 @@ const Survey = require('../../models/Survey')
 const validateSurveyInput = require('../../validation/survey')
 
 const router = express.Router()
-
+// @route  Get /api/surveys/
+// @desc   Feedback page
+// @access public
+router.get('/thanks', (req, res) => {
+  res.send('Thanks for voting!')
+})
 // @route  Post /api/surveys/new
 // @desc   Creating a new survey
 // @access private

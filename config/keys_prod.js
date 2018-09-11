@@ -29,6 +29,9 @@ const keys = {
   },
   sendgrid: {
     apiKey: process.env.SEND_GRID_KEY,
+  },
+  domain: {
+    url: process.env.DOMAIN_URL,
   }
 }
 

@@ -1,3 +1,5 @@
+const keys = require('../../config/keys').keys
+
 module.exports = (survey) => {
   return `
   <html>
@@ -98,8 +100,8 @@ module.exports = (survey) => {
   			<p>Please, help us answering the folowing question:</p>
   			<h3>${survey.body}</h3>
   			<div>
-  				<a href="http://localhost:3000">Yes</a>
-  				<a href="http://localhost:3000">No</a>
+  				<a href="${keys.domain.url}/api/surveys/thanks">Yes</a>
+  				<a href="${keys.domain.url}/api/surveys/thanks">No</a>
   			</div>
   			<footer>
   				<span>Copyright 2018 MailMaker - Erwan Riou</span>

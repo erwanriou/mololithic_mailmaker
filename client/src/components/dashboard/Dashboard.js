@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import SubNav from '../layout/SubNav'
+import NavSub from '../layout/NavSub'
 
 class Dashboard extends React.Component {
   render() {
@@ -32,7 +32,7 @@ class Dashboard extends React.Component {
 
     return (
       <Fragment>
-        <SubNav user={user} />
+        <NavSub user={user} />
         <main className='dashboard'>
           <div className="opacity">
             <div className="container">

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Payments from '../transaction/Payments'
 
-class SubNav extends React.Component {
+class NavSub extends React.Component {
   render() {
     const  { user, back } = this.props
 
@@ -35,4 +35,4 @@ class SubNav extends React.Component {
   }
 }
 
-export default SubNav
+export default NavSub

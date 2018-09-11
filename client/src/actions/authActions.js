@@ -20,6 +20,16 @@ export const handleCredit = (token) => async dispatch => {
   })
 }
 
+export const sendSurvey = (newSurvey, history) => async dispatch => {
+  dispatch(loading())
+  const res = await axios.post('/api/surveys/new', newSurvey)
+  history.push('/dashboard')
+  dispatch({
+    type: FETCH_USER,
+    payload: res.data,
+  })
+}
+
 export const logOut = () => async dispatch => {
   dispatch(loading())
   await axios.get('/api/users/logout')

@@ -21,7 +21,13 @@
 .submenu .title {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   height: 3.5rem;
+}
+.submenu .title i {
+  margin-left: 1rem;
+  color: white;
+  font-size: 1rem;
 }
 .submenu span {
   align-self: center;
@@ -59,7 +65,7 @@
   background-size: cover;
   height: 920px;
 }
-.dashboard .createsurvey {
+.dashboard .createsurveyitem {
   position: relative;
   z-index: 10;
   cursor: pointer;
@@ -76,17 +82,17 @@
   box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
   transition: box-shadow 0.2s ease;
 }
-.dashboard .createsurvey i, .dashboard .createsurvey .content {
+.dashboard .createsurveyitem i, .dashboard .createsurveyitem .content {
   padding: 0 4rem;
 }
-.dashboard .createsurvey i {
+.dashboard .createsurveyitem i {
   color: #9a0d0e;
   font-size: 2rem;
 }
-.dashboard .createsurvey:hover {
+.dashboard .createsurveyitem:hover {
   box-shadow: 2px 2px 10px 0 rgba(46,61,73,.2);
 }
-.dashboard .createsurvey:hover i {
+.dashboard .createsurveyitem:hover i {
   animation:spin 1s linear infinite;
 }
 /* rotate animation */

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import Payments from '../transaction/Payments'
+import SubNav from '../layout/SubNav'
 
 class Dashboard extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class Dashboard extends React.Component {
 
     user.credits > 1
       ? creditCheck = (
-          <Link className='createsurvey' to='/dashboard/new'>
+          <Link className='createsurveyitem' to='/dashboard/new'>
             <i className="fas fa-pen"></i>
             <div className='content'>
               <h2>New Survey</h2>
@@ -20,7 +20,7 @@ class Dashboard extends React.Component {
           </Link>
         )
       : creditCheck = (
-          <div className='createsurvey'>
+          <div className='createsurveyitem'>
             <i class="fas fa-exclamation"></i>
             <div className='content'>
               <h2>You don't have enough credit to create a New Survey</h2>
@@ -32,25 +32,11 @@ class Dashboard extends React.Component {
 
     return (
       <Fragment>
-        <div className="submenu">
-          <div className="container">
-            <div className="submenucontent">
-              <div className="title">
-                <span>Welcome {user.name}!</span>
-              </div>
-              <div className="transaction">
-                <span><strong>{user.credits}</strong> credits</span>
-                <Payments />
-              </div>
-            </div>
-          </div>
-        </div>
+        <SubNav user={user} />
         <main className='dashboard'>
           <div className="opacity">
             <div className="container">
-
-                {creditCheck}
-
+              {creditCheck}
             </div>
           </div>
         </main>

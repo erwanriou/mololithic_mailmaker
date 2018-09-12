@@ -16,6 +16,15 @@ const router = express.Router()
 router.get('/thanks', (req, res) => {
   res.send('Thanks for voting!')
 })
+
+// @route  Get /api/surveys/webhooks
+// @desc   controle the webhooks request on sendgrid
+// @access private
+router.post('/webhooks', (req, res) => {
+  console.log(req.body);
+  res.send({})
+})
+
 // @route  Post /api/surveys/new
 // @desc   Creating a new survey
 // @access private

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { FETCH_USER, USER_LOGOUT, GET_ERRORS } from './types'
-import { loading } from './index'
+import { loading } from './loadingActions'
 
 export const fetchUser = () => async dispatch => {
   dispatch(loading())
@@ -14,16 +14,6 @@ export const fetchUser = () => async dispatch => {
 export const handleCredit = (token) => async dispatch => {
   dispatch(loading())
   const res = await axios.post('/api/stripe', token)
-  dispatch({
-    type: FETCH_USER,
-    payload: res.data,
-  })
-}
-
-export const sendSurvey = (newSurvey, history) => async dispatch => {
-  dispatch(loading())
-  const res = await axios.post('/api/surveys/new', newSurvey)
-  history.push('/dashboard')
   dispatch({
     type: FETCH_USER,
     payload: res.data,

@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
-import { sendSurvey } from '../../actions/authActions'
 
 import NavSub from '../layout/NavSub'
 import SurveyForm from './SurveyForm'
@@ -58,4 +57,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 })
 
-export default connect(mapStateToProps, {sendSurvey})(SurveyNew)
+export default connect(mapStateToProps)(SurveyNew)

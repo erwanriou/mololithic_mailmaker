@@ -6,7 +6,7 @@ const RecipientSchema = new Schema({
   responded: {
     type: Boolean,
     default: false,
-  }
+  },
 })
 
 module.exports = RecipientSchema

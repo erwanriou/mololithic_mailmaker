@@ -1,4 +1,7 @@
 const express = require('express')
+const Path = require('path-parser').default
+const { URL } = require('url')
+const _ = require('lodash')
 const requireLogin = require('../../middlewares/requireLogin')
 const requireCredit = require('../../middlewares/requireCredit')
 
@@ -21,7 +24,26 @@ router.get('/thanks', (req, res) => {
 // @desc   controle the webhooks request on sendgrid
 // @access private
 router.post('/webhooks', (req, res) => {
-  console.log(req.body);
+  const p = new Path('/api/surveys/:surveyId/:choice')
+  _.chain(req.body)
+    .map(({ email, url }) => {
+      const  match = p.test(new URL(url).pathname)
+      if (match) return { email, ...match }
+    })
+    .compact()
+    .uniqBy('email', 'surveyId')
+    .each(({ surveyId, email, choice }) => {
+      Survey.updateOne({
+        _id: surveyId,
+        recipients: {
+          $elemMatch: { email: email, responded: false }
+        }
+      }, {
+        $inc: { [choice]: 1 },
+        $set: { 'recipients.$.responded': true }
+      }).exec()
+    })
+    .value()
   res.send({})
 })
 

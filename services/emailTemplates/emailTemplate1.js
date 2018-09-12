@@ -100,8 +100,8 @@ module.exports = (survey) => {
   			<p>Please, help us answering the folowing question:</p>
   			<h3>${survey.body}</h3>
   			<div>
-  				<a href="${keys.domain.url}/api/surveys/thanks">Yes</a>
-  				<a href="${keys.domain.url}/api/surveys/thanks">No</a>
+  				<a href="${keys.domain.url}/api/surveys/${survey.id}/yes">Yes</a>
+  				<a href="${keys.domain.url}/api/surveys/${survey.id}/no">No</a>
   			</div>
   			<footer>
   				<span>Copyright 2018 MailMaker - Erwan Riou</span>

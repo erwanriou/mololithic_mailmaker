@@ -8,7 +8,7 @@ class Dashboard extends React.Component {
     const  { user } = this.props.auth
     let creditCheck
 
-    user.credits > 1
+    user.credits > 0
       ? creditCheck = (
           <Link className='createsurveyitem' to='/dashboard/new'>
             <i className="fas fa-pen"></i>

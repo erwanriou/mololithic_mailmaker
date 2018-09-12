@@ -35,9 +35,6 @@
   font-size: 1rem;
   color: white;
 }
-.submenu span strong {
-  font-weight: bold;
-}
 .submenu span button {
   margin-left: 1rem;
   font-size: 1rem;
@@ -104,18 +101,34 @@
 .dashboard .campaigncontent {
   position: relative;
   z-index: 10;
-  cursor: pointer;
   color: white;
   top: 7rem;
   display: flex;
   text-align: right;
   align-items: center;
-  justify-content: flex-end;
   margin: 1rem auto;
   width: 100%;
   height: 10rem;
   background-color: #7b4444;
   border: 1px solid #dedede;
   box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
-  transition: box-shadow 0.2s ease;
+}
+.dashboard .notcreated {
+  transition: all 0.2s ease;
+  justify-content: flex-end;
+}
+.dashboard .created {
+  transition: all 0.2s ease;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.dashboard .created:hover {
+  box-shadow: 2px 2px 10px 0 rgba(46,61,73,.2);
+  background-color: #482d2d;
+}
+.dashboard .campaigncontent p {
+  margin-top: 0.5rem;
+}
+.dashboard .campaigncontent .date {
+  padding: 0 4rem;
 }

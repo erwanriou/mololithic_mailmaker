@@ -1,6 +1,7 @@
 /* General */
 body {
   font-family: 'Roboto', sans-serif;
+  font-weight: 100;
   font-size: 12px;
 }
 .container {
@@ -13,6 +14,9 @@ h1 {
 }
 h2 {
   font-size: 1.5rem;
+}
+strong {
+  font-weight: bold;
 }
 .spinner img {
   display: block;

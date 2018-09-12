@@ -37,7 +37,7 @@ class Dashboard extends React.Component {
 
     isEmpty(surveyList) === true
       ? campaignContent = (
-          <div className='campaigncontent'>
+          <div className='campaigncontent notcreated'>
             <div className='content'>
               <h2>You don't have created any Marketing Campaign Survey Yet!</h2>
               <p>add one by click on the field on top</p>

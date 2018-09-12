@@ -31,13 +31,12 @@ class SurveyNew extends React.Component {
         )
       : createSurvey = (
           <div className='createsurveyform'>
-            <h2>Fill out the Survey form to create your email campaign...</h2>
+            <h2>Fill out the Survey form to create your email campaign!</h2>
             <SurveyForm onSurveySubmit={() => {
               this.setState({ showFormReview: true })
             }}/>
           </div>
         )
-
 
     return (
       <Fragment>

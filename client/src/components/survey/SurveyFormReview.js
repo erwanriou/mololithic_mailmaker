@@ -40,7 +40,7 @@ class SurveyFormReview extends React.Component {
       <Fragment>
         <form onSubmit={this.handleSubmit}>
           {reviewFields}
-          <a href='#' onClick={onCancel}>
+          <a onClick={onCancel}>
             <i className="fas fa-angle-left"></i>
             <span>Back</span>
           </a>

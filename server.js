@@ -35,7 +35,6 @@ mongoose
 // Middleware
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
-app.use(requestIP.mw())
 
 // Passport config
 app.use(cookieSession({ maxAge: 24 * 60 * 60 * 1000,  keys: [keys.cookie.secret] }))

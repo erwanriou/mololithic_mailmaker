@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { FETCH_USER, USER_LOGOUT, GET_ERRORS } from './types'
-import { loading } from './loadingActions'
+import { loading, clearLoading } from './loadingActions'
 
 export const fetchUser = () => async dispatch => {
   dispatch(loading())
@@ -9,6 +9,7 @@ export const fetchUser = () => async dispatch => {
     type: FETCH_USER,
     payload: res.data,
   })
+  dispatch(clearLoading())
 }
 
 export const handleCredit = (token) => async dispatch => {

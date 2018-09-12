@@ -14,10 +14,18 @@ const validateSurveyInput = require('../../validation/survey')
 
 const router = express.Router()
 // @route  Get /api/surveys/
-// @desc   Feedback page
+// @desc   Get all the surveys of one user
+// @access private
+router.get('/', requireLogin, async (req, res) => {
+  const surveys = await Survey.find({ _user: req.user.id })
+  res.status(200).json(surveys)
+})
+
+// @route  Get /api/surveys/:surveysId/:choice
+// @desc   Feedback page to redirect to the client
 // @access public
-router.get('/thanks', (req, res) => {
-  res.send('Thanks for voting!')
+router.get('/:surveyId/:choice', (req, res) => {
+  res.redirect('/feedback')
 })
 
 // @route  Get /api/surveys/webhooks
@@ -40,7 +48,8 @@ router.post('/webhooks', (req, res) => {
         }
       }, {
         $inc: { [choice]: 1 },
-        $set: { 'recipients.$.responded': true }
+        $set: { 'recipients.$.responded': true },
+        lastResponded: new Date,
       }).exec()
     })
     .value()

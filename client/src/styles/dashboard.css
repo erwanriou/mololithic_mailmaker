@@ -83,7 +83,7 @@
   box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
   transition: box-shadow 0.2s ease;
 }
-.dashboard .createsurveyitem i, .dashboard .createsurveyitem .content {
+.dashboard .createsurveyitem i, .dashboard .createsurveyitem .content, .dashboard .campaigncontent .content {
   padding: 0 4rem;
 }
 .dashboard .createsurveyitem i {
@@ -100,3 +100,22 @@
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.dashboard .campaigncontent {
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  color: white;
+  top: 7rem;
+  display: flex;
+  text-align: right;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 1rem auto;
+  width: 100%;
+  height: 10rem;
+  background-color: #7b4444;
+  border: 1px solid #dedede;
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+  transition: box-shadow 0.2s ease;
+}

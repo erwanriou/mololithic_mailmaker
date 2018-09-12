@@ -23,8 +23,10 @@ class SurveyNew extends React.Component {
     showFormReview
       ? createSurvey = (
           <div className='createsurveyform'>
-            <h2>Review your survey NOW</h2>
-            <SurveyFormReview />
+            <h2>Review your survey before sending it!</h2>
+            <SurveyFormReview onCancel={() => {
+              this.setState({ showFormReview: false })
+            }}/>
           </div>
         )
       : createSurvey = (

@@ -66,6 +66,10 @@
   font-weight: bold;
   transition: background-color 0.2s ease;
 }
+.createsurveyform form a i {
+  margin-right: 1rem;
+  font-size: 1rem;
+}
 .createsurveyform form a:hover {
   background-color: #867274;
 }
@@ -89,4 +93,11 @@
 }
 .createsurveyform form button:hover {
   background-color: #772d2d;
+}
+
+/* SurveyFormReview */
+.createsurveyform form .field p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-style: italic;
 }

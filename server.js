@@ -3,7 +3,6 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cookieSession = require('cookie-session')
 const passport = require('passport')
-const requestIP = require('request-ip')
 
 // Import routes
 const google = require('./routes/auth/google')

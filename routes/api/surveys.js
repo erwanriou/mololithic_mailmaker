@@ -17,7 +17,17 @@ const router = express.Router()
 // @desc   Get all the surveys of one user
 // @access private
 router.get('/', requireLogin, async (req, res) => {
-  const surveys = await Survey.find({ _user: req.user.id })
+  const surveys = await Survey
+    .find({ _user: req.user.id })
+    .select({ recipients: false })
+  res.status(200).json(surveys)
+})
+
+// @route  Get /api/:surveyId
+// @desc   Get a specific survey
+// @access private
+router.get('/:surveyId', requireLogin, async (req, res) => {
+  const surveys = await Survey.findById({ _id: req.params.surveyId })
   res.status(200).json(surveys)
 })
 

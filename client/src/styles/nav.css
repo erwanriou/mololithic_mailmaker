@@ -32,3 +32,60 @@
   border-radius: 2rem;
   width: 2rem;
 }
+.submenu {
+  position: relative;
+  z-index: 10;
+  border-top: 1px #eceaea solid;
+  border-bottom: 1px #f1f1f1 solid;
+  position: fixed;
+  top: 3rem;
+  width: 100%;
+  background-color: #e88787;
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
+}
+.submenu .submenucontent {
+  display: flex;
+  justify-content: space-between;
+}
+.submenu .transaction {
+  display: flex;
+  justify-content: flex-end;
+  height: 3.5rem;
+}
+.submenu .title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 3.5rem;
+}
+.submenu .title i {
+  margin-left: 1rem;
+  color: white;
+  font-size: 1rem;
+}
+.submenu span {
+  align-self: center;
+  margin-left: 1rem;
+  font-size: 1rem;
+  color: white;
+}
+.submenu span button {
+  margin-left: 1rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #ec4b4b;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 10px 0 rgba(46,61,73,.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.submenu span button i {
+  font-size: 0.8rem;
+  margin-right: 1rem;
+}
+.submenu span button:hover {
+  box-shadow: 1px 1px 5px 0 rgba(46,61,73,.2);
+  background-color: #a25a52;
+}

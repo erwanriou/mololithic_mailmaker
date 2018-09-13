@@ -7,10 +7,10 @@ class CampaignItem extends React.Component {
     const { survey } = this.props
     return (
       <Link className='campaigncontent created' to={`/dashboard/campaign/${survey._id}`}>
-        <div className='date'>Created the <Moment format='YYYY.MM.DD'>{survey.dateCreated}</Moment></div>
+        <div className='leftdata'>Created the <Moment format='YYYY.MM.DD'>{survey.dateCreated}</Moment></div>
         <div className='content'>
           <h2>Campaign <strong>{survey.title}</strong></h2>
-          <p>See the feedback of your survey sent on {survey.recipients.length} email(s)</p>
+          <p>See the feedback of your survey sent on your recipient(s)</p>
         </div>
       </Link>
     )

@@ -43,8 +43,8 @@ class App extends React.Component {
           <Route exact path='/register' component={Register}/>
           <Route exact path='/:surveyId/:choice' component={Feedback}/>
           <PrivateRoute exact path='/dashboard' component={Dashboard}/>
-          <PrivateRoute exact path='/dashboard/new' component={SurveyNew}/>
-          <PrivateRoute exact path='/dashboard/campaign/:id' component={Campaign}/>
+          <PrivateRoute exact path='/dashboard/campaign/new' component={SurveyNew}/>
+          <PrivateRoute exact path='/dashboard/campaign/:surveyId' component={Campaign}/>
         </Switch>
         <Footer />
       </Fragment>

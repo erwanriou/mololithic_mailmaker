@@ -18,6 +18,9 @@ h2 {
 strong {
   font-weight: bold;
 }
+.spinner {
+  margin: 0 auto;
+}
 .spinner img {
   display: block;
   width: 100px;

@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
 
     user.credits > 0
       ? creditCheck = (
-          <Link className='createsurveyitem' to='/dashboard/new'>
+          <Link className='createsurveyitem' to='/dashboard/campaign/new'>
             <i className="fas fa-pen"></i>
             <div className='content'>
               <h2>New Survey</h2>

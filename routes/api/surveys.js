@@ -25,7 +25,9 @@ router.get('/', requireLogin, async (req, res) => {
 // @desc   Feedback page to redirect to the client
 // @access public
 router.get('/:surveyId/:choice', (req, res) => {
-  res.redirect('/feedback')
+  const surveyId = req.params.surveyId
+  const choice = req.params.choice
+  res.redirect(`/${surveyId}/${choice}`)
 })
 
 // @route  Get /api/surveys/webhooks
@@ -35,7 +37,8 @@ router.post('/webhooks', (req, res) => {
   const p = new Path('/api/surveys/:surveyId/:choice')
   _.chain(req.body)
     .map(({ email, url }) => {
-      const  match = p.test(new URL(url).pathname)
+      const sdpath = new URL(url).pathname
+      const match = p.test(sdpath)
       if (match) return { email, ...match }
     })
     .compact()

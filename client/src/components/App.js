@@ -12,12 +12,14 @@ import Feedback from './layout/Feedback'
 import Login from './auth/Login'
 import Register from './auth/Register'
 import Dashboard from './dashboard/Dashboard'
+import Campaign from './dashboard/Campaign'
 import SurveyNew from './survey/SurveyNew'
 import Footer from './layout/Footer'
 
 import '../styles/reset.css'
 import '../styles/style.css'
 import '../styles/dashboard.css'
+import '../styles/campaign.css'
 import '../styles/feedback.css'
 import '../styles/survey.css'
 import '../styles/layout.css'
@@ -39,9 +41,10 @@ class App extends React.Component {
           <Route exact path='/' component={Landing}/>
           <Route exact path='/login' component={Login}/>
           <Route exact path='/register' component={Register}/>
-          <Route exact path='/feedback' component={Feedback}/>
+          <Route exact path='/:surveyId/:choice' component={Feedback}/>
           <PrivateRoute exact path='/dashboard' component={Dashboard}/>
           <PrivateRoute exact path='/dashboard/new' component={SurveyNew}/>
+          <PrivateRoute exact path='/dashboard/campaign/:id' component={Campaign}/>
         </Switch>
         <Footer />
       </Fragment>

@@ -16,6 +16,9 @@
 .campaignLink i {
   margin-right: 1rem;
 }
+.campaigncontent .spinner img, .campaigndetail .spinner img {
+  width: 3rem;
+}
 .campaigncontent {
   position: relative;
   z-index: 10;

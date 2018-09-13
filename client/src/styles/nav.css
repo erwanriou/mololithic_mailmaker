@@ -73,7 +73,7 @@
   margin-left: 1rem;
   font-size: 1rem;
   color: white;
-  background-color: #ec4b4b;
+  background-color: #a55656;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
@@ -87,5 +87,5 @@
 }
 .submenu span button:hover {
   box-shadow: 1px 1px 5px 0 rgba(46,61,73,.2);
-  background-color: #a25a52;
+  background-color: #6f4343;
 }

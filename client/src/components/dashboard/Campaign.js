@@ -70,7 +70,7 @@ class Campaign extends React.Component {
       : campaignDetail2 = (
           <Fragment>
             <div className='leftdata'><h3>Recipient List: <strong>{survey.recipients.length} email(s)</strong></h3></div>
-            <div className='content'>
+            <div className='content responsivenone'>
               { survey.recipients.map(recipient => (
                 <div className='flexend' key={recipient._id}>
                   <p>the owner of the {recipient.email}</p>

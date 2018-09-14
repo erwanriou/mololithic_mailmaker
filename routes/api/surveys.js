@@ -35,9 +35,10 @@ router.get('/:surveyId', requireLogin, async (req, res) => {
 // @desc   Feedback page to redirect to the client
 // @access public
 router.get('/:surveyId/:choice', (req, res) => {
-  const surveyId = req.params.surveyId
-  const choice = req.params.choice
-  res.redirect(`/${surveyId}/${choice}`)
+  // const surveyId = req.params.surveyId
+  // const choice = req.params.choice
+  // res.redirect(`/${surveyId}/${choice}`)
+  res.send('thanks for your vote!')
 })
 
 // @route  Get /api/surveys/webhooks

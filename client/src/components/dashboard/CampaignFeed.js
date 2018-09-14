@@ -5,7 +5,7 @@ import CampaignItem from './CampaignItem'
 class CampaignFeed extends React.Component {
   render() {
     const { surveys } = this.props
-    return surveys.map(survey =>
+    return surveys.reverse().map(survey =>
       <CampaignItem
         key={survey._id}
         survey={survey}

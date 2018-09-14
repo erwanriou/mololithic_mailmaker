@@ -14,12 +14,30 @@ class Campaign extends React.Component {
     surveyId && this.props.fetchSurvey(surveyId)
   }
 
+  handleRatio() {
+    const  { survey } = this.props.surveys
+    const result = (survey.yes + survey.no) / survey.recipients.length * 100
+    return <p>The percentage of answer on the full survey is <strong>{result}%</strong></p>
+  }
+
+  handleLastResponded() {
+    let last = new Date(this.props.surveys.survey.lastResponded).getDate()
+    let today = new Date(Date.now()).getDate()
+    const result = today - last
+    let reply
+    result === 0
+      ? reply = (<p>We had a reply on our feedback <strong>today!</strong></p>)
+      : reply = (<p>We didn't had any replies since <strong>{result} days</strong></p>)
+    return reply
+  }
+
   render() {
     const  { user } = this.props.auth
     const  { survey, loading } = this.props.surveys
     let campaignContent
     let campaignDetail1
     let campaignDetail2
+    let campaignDetail3
 
     loading || survey.recipients === undefined
       ? campaignContent = <Spinner />
@@ -39,7 +57,9 @@ class Campaign extends React.Component {
           <Fragment>
             <div className='leftdata'><h3>Email Content</h3></div>
             <div className='content'>
+              <strong>The Subject of the email:</strong>
               <p>{survey.subject}</p>
+              <strong>The body content of the email:</strong>
               <p>{survey.body}</p>
             </div>
           </Fragment>
@@ -64,6 +84,20 @@ class Campaign extends React.Component {
           </Fragment>
         )
 
+    loading || survey.recipients === undefined
+      ? campaignDetail3 = <Spinner />
+      : campaignDetail3 = (
+          <Fragment>
+            <div className='leftdata'><h3>Email Analytics: <strong>Feedback</strong></h3></div>
+            <div className='content'>
+              <p>The quantity of Yes answers: <strong>{survey.yes}</strong></p>
+              <p>The quantity of No answers: <strong>{survey.no}</strong></p>
+              {this.handleLastResponded()}
+              {this.handleRatio()}
+            </div>
+          </Fragment>
+        )
+
     return (
       <Fragment>
         <NavSub user={user}/>
@@ -82,6 +116,9 @@ class Campaign extends React.Component {
               </div>
               <div className='campaigndetail mount'>
                 {campaignDetail2}
+              </div>
+              <div className='campaigndetail mount'>
+                {campaignDetail3}
               </div>
             </div>
           </div>

@@ -82,7 +82,7 @@
 }
 .campaigndetail p {
   font-size: 0.8rem;
-  padding: 0.2rem;
+  padding: 0.2rem 0;
   text-align: right;
 }
 .campaigndetail .content {
